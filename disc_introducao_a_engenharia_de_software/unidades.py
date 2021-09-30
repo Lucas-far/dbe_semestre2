@@ -998,6 +998,154 @@ def unidade1_secao3():
     disponibilizamos e alterar seu código por meio da criação de um branch.
 
     A seguir veja uma síntese sobre as atividades de um processo de software.
+
+    CVS (CONCURRENT VERSION SYSTEM OU SISTEMA DE VERSÕES CONCORRENTES)
+    Trata-se de uma ferramenta open source que implementa as principais funções relacionadas ao processo de controle de
+    versões. O CVS armazena em seu repositório as modificações realizadas num arquivo ao longo do tempo. Cada
+    modificação é identificada por um número chamado revisão. Toda revisão armazena as modificações realizadas, quem
+    realizou as modificações, quando foram realizadas, entre outras informações (CAETANO, 2004). A Figura 1.13 ilustra
+    as principais funções realizadas pelo CVS.
+
+    Figura 1.13 | Principais operações realizadas pelo CVS
+    Fonte: adaptado de Caetano (2004, p. 15).
+    ----------------------------------------------- IMAGEM: img_1-13.jpg -----------------------------------------------
+
+    O repositório CVS – assim como o de outras ferramentas – armazena uma cópia completa de todos os arquivos e
+    diretórios que estão sob controle de versão. Normalmente, o desenvolvedor nunca acessa nenhum dos arquivos no
+    repositório diretamente. Em vez disso, usa comandos CVS para obter sua própria cópia dos arquivos em uma área de
+    trabalho e, em seguida, trabalha nessa cópia. Quando termina um conjunto de alterações, realiza uma operação chamada
+    commit (ou confirmação) de volta para o repositório. Por isso, o repositório guarda as mudanças feitas pelo
+    desenvolvedor, além de registrar exatamente o que e quando foi alterado e outras informações semelhantes. Observe
+    que o repositório não é um subdiretório da área de trabalho ou vice-versa e que eles devem estar em locais separados
+    (GNU, [s.d.]).
+
+    A estrutura geral do repositório é uma árvore de diretórios correspondente aos existentes no diretório de trabalho.
+    Por exemplo, supondo que o repositório esteja em /usr/local/cvsroot, uma possível estrutura de diretório é mostrada
+    na Figura 1.14.
+
+    Figura 1.14 | Uma possível estrutura de diretórios do repositório CVS
+    Fonte: GNU ([s.d.]).
+    ----------------------------------------------- IMAGEM: img_1-14.jpg -----------------------------------------------
+
+    Na estrutura de diretórios estão os arquivos de histórico de cada arquivo sob controle de versão. O nome do arquivo
+    de histórico é o nome do arquivo correspondente com ‘, v’ anexado ao final. Os arquivos “index.php,v” e
+    “frontend.c,v” são exemplos possíveis de arquivos de históricos. Eles guardam, entre outras coisas, informações
+    suficientes para recriar qualquer revisão do arquivo, mais um log de todas as mensagens de commit e o nome do
+    usuário que enviou a revisão. Os arquivos de histórico são conhecidos como arquivos RCS, porque o primeiro programa
+    a armazenar arquivos nesse formato foi um sistema de controle de versão conhecido como RCS (GNU, [s.d.]).
+
+    EXEMPLIFICANDO
+    Conforme ilustrado na figura a seguir, vários desenvolvedores podem trabalhar de forma concorrente em um mesmo
+    sistema. Como alternativa, é possível atuar isoladamente em sistemas diferentes. Este exemplo de operação do CVS
+    inclui um repositório central e três usuários, cada um com sua cópia de trabalho. As transições de comandos update
+    (ou check-out) e commit (ou check-in) também estão representadas na Figura 1.15.
+
+    Figura 1.15 | Exemplo de funcionamento do CVS
+    Fonte: elaborada do autor.
+    ----------------------------------------------- IMAGEM: img_1-15.jpg -----------------------------------------------
+
+    Cada alteração feita no programa gera um novo número de versão que o identifica. O CVS atribui automaticamente
+    números como 1.1, 1.2 e assim por diante para as versões geradas. Um arquivo pode ter várias versões e, da mesma
+    forma, um produto de software pode ter várias versões. Esse produto geralmente recebe um número de versão como
+    “4.1.1”. Cada versão de um arquivo possui um número de revisão exclusivo. Os números de revisão são semelhantes a
+    “1.1”, “1.2”, “1.3.2.2” ou mesmo “1.3.2.2.4.5”.
+
+    Um número de revisão sempre tem um número par de inteiros decimais separados por ponto. Por padronização, a revisão
+    1.1 é a primeira de um arquivo. Cada uma delas recebe sucessivamente um novo número, aumentando o número mais à
+    direita em um. A Figura 1.16 exibe algumas revisões, com as mais recentes à direita. Também é possível terminar com
+    números contendo mais de um ponto, por exemplo “1.3.2.2”.
+
+    Figura 1.16 | Representação de revisões mais recentes no número à direita
+    Fonte: GNU ([s.d.]).
+    ----------------------------------------------- IMAGEM: img_1-16.jpg -----------------------------------------------
+
+    Antes de encerrarmos o conteúdo do CVS, vale tratarmos de mais algumas terminologias relacionadas ao assunto (GNU,
+    [s.d.]).
+
+    -> Checkout: denominação dada à primeira recuperação (ou download) de um módulo do sistema vindo do repositório do CVS.
+
+    -> Commit: trata-se do envio do artefato modificado ao repositório do CVS.
+
+    -> Export (ou Exportação): trata-se da recuperação (ou download) de um módulo inteiro a partir de um repositório, sem
+                               os arquivos administrativos CVS. Módulos exportados não ficam sob controle do CVS.
+
+    -> Import (ou Importação): esse termo identifica a criação de um módulo completo no âmbito de um repositório CVS, feita
+                               por meio de um upload de uma estrutura de diretórios.
+
+    -> Module (ou módulo): é a representação de uma hierarquia de diretórios. Um projeto de determinado software
+                           efetiva-se como um módulo dentro do repositório.
+
+    -> Release: este termo equivale a um “lançamento”. Um número de release identifica a versão de um produto completo
+                ou inteiro.
+
+    ASSIMILE
+    Release é o termo usado para descrever a denominação atribuída a um conjunto de arquivos para identificar
+    determinado ponto no tempo, sobretudo quando se quer identificar um conjunto de novas características ou correções
+    de um software (CAETANO, 2004).
+
+    -> Merge: refere-se à fusão das diversas modificações feitas por diferentes usuários na cópia local de um mesmo
+              arquivo. Sempre que alguém altera o código, é necessário realizar uma atualização antes da aplicação da
+              operação de commit, a fim de que seja feita a fusão das mudanças.
+
+    SAIBA MAIS
+    Operações aplicadas nos branches
+
+    A utilização dos branches não seria completa se não pudéssemos aplicar operações em suas instâncias por meio de
+    comandos específicos. Vejamos alguns deles, segundo Vormittag (2016):
+
+    1 - git branch <nome>: cria um novo branch com o nome escrito em <nome>.
+
+    2 - git checkout <branch>: seleciona um branch específico, tornando-o o branch atual, com o qual o desenvolvedor
+                               trabalhará.
+
+    3 - git branch: este comando, sem argumentos, fornece a lista de todos os branches do projeto. A ferramenta indica o
+                    atual com um asterico posicionado próximo a ele.
+
+    4 - git mv: comando usado para mover ou renomear arquivos.
+
+    5 - git rm: comando usado para remover arquivos a partir da linha de comando. Neste caso vale um registro: você
+                também pode usar o Windows Explorer ou outro gerenciador de arquivos para mover, renomear ou remover
+                arquivos de um projeto do GitHub.
+
+    PESQUISE MAIS
+    A indicação relacionada à utilização de branches no GitHub é a leitura do tutorial disponível no site Hostinger
+    (LONGEN, 2019).
+
+    LONGEN, A. S. Como Usar Um Git Branch. Hostinger, [S.l.], 23 abr. 2019.
+
+    Este foi, portanto, o conteúdo que queríamos compartilhar com você. O entendimento de da importância do
+    gerenciamento da configuração de um software e a familiaridade com os termos e o funcionamento de uma ferramenta de
+    controle de versões são habilidades imprescindíveis para o desenvolvedor inserido em uma equipe de trabalho e ao
+    gestor do software. Esperamos que este conteúdo seja útil a você em breve. Boa sorte e bons estudos!
+
+    #ref Unidade 1 - Seção 3
+    --------------------------------------------------- REFERÊNCIAS ---------------------------------------------------
+    CAETANO, C. CVS – Controle de Versões e Desenvolvimento Colaborativo de Software. São Paulo: Novatec Editora, 2004.
+
+    DANTAS, C. Gerência de Configuração de Software. DevMedia, [S.l.], 2009. Disponível em: https://bit.ly/2LOcXP7.
+    Acesso em: 26 out. 2020.
+
+    GIT FOR WINDOWS. Git for Windows – Version 2.29.2.3. Git for Windows, [S.l.], 2020. Disponível em:
+    https://gitforwindows.org/. Acesso em: 13 dez. 2020.
+
+    GITHUB. Join. GitHub, [S.l.], c2020. Disponível em: https://github.com/join. Acesso em: 12 dez. 2020.
+
+    GNU. The Repository. GNU, [S.l., s.d.]. Disponível em: https://bit.ly/38incTg. Acesso em: 27 out. 2020.
+
+    IEEE Computer Society. Guide to the Software Engineering Body of Knowledge. Piscataway: The Institute of Electrical
+    and Electronic Engineers, 2004.
+
+    LEON, A. Software Configuration Management Handbook. 3. ed. Boston: Artech House, 2015.
+
+    LONGEN, A. S. Como Usar Um Git Branch. Hostinger, [S.l.], 23 abr. 2019. Disponível em: https://bit.ly/3r8DGWC.
+    Acesso em: 28 nov. 2020.
+
+    MAILUND, T. The Beginner’s Guide to GitHub. [S.l.: s.n.], 2017. E-book.
+
+    MAITINO, R. Roquemaitino/engsoft. GitHub, [S.l.], 2020. Disponível em: https://bit.ly/3nJHqfr. Acesso em: 12 dez.
+    2020.
+
+    VORMITTAG, R. A Practical Guide to Git and GitHub for Windows Users. 2. ed. [S.l.]: Reiter Consulting, 2016. E-book.
     """
 
 

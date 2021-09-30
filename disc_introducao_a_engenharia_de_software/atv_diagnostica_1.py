@@ -1,6 +1,6 @@
 
 
-# RESPOSTA:
+# RESPOSTA: A
 def pergunta_1():
     """
     1) Em relação à Engenharia de Software, pode-se dizer que é um dos seus objetivos:
@@ -9,24 +9,25 @@ def pergunta_1():
     b) Facilitar o aprendizado da equipe em linguagens de programação.
     c) Produzir software que atenda às necessidades da equipe de desenvolvimento.
     d) Promover a ascensão profissional dos empreendedores em Tecnologia da Informação
-    e) Promover a boa comunicação entre os membros da equipe de desenvolvimento, deixando a qualidade do produto em segundo plano.
+    e) Promover a boa comunicação entre os membros da equipe de desenvolvimento, deixando a qualidade do produto em
+       segundo plano.
     """
 
 
-# RESPOSTA:
+# RESPOSTA: A
 def pergunta_2():
     """
     2) São situações típicas da chamada “Crise do Software”:
 
     a) Projetos mal elaborados e geração de produtos de difícil manutenção.
-    b) A crise do software nunca existiu.
-    c) Entregas pontuais e clientes satisfeitos.
+    b) A crise do software nunca existiu. [Falso]
+    c) Entregas pontuais e clientes satisfeitos. [Falso]
     d) Limites orçamentários respeitados e treinamento adequado aos usuários.
-    e) Métricas não confiáveis e histórico de projetos anteriores disponíveis.
+    e) Métricas não confiáveis e histórico de projetos anteriores disponíveis. [Falso]
     """
 
 
-# RESPOSTA:
+# RESPOSTA: A
 def pergunta_3():
     """
     3) Assinale a alternativa que contém os tipos de software que completam corretamente as lacunas nas frases abaixo.
@@ -36,21 +37,21 @@ def pergunta_3():
     iii) ___________ deve ter interface amigável e interativa.
 
     a) Software em tempo real, software comercial, software de computador pessoal.
-    b) Software básico, software de computador pessoal, software de computador pessoal.
+    b) Software básico, software de computador pessoal, software de computador pessoal. [Falso]
     c) Software básico, software em tempo real e software científico.
-    d) Software científico, software básico, software de computador pessoal.
+    d) Software científico, software básico, software de computador pessoal. [Falso]
     e) Software em tempo real, software em tempo real, software científico.
     """
 
 
-# RESPOSTA:
+# RESPOSTA: A
 def pergunta_4():
     """
     4) Analise as afirmações sobre o modelo cascata:
 
-    I. Sua configuração original é linear e cada fase ocorre apenas uma vez durante o processo.
-    II. Não apresenta distinção clara entre as fases.
-    III. Foi abolido pelo fato de sua implantação ser difícil e pouco praticada.
+    I.   Sua configuração original é linear e cada fase ocorre apenas uma vez durante o processo.
+    II.  Não apresenta distinção clara entre as fases. [Falso]
+    III. Foi abolido pelo fato de sua implantação ser difícil e pouco praticada. [Falso]
 
     É verdadeiro o que se afirma apenas em:
 
